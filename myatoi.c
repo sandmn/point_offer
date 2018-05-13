@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<ctype.h>
 
+
 int myatoi(char arr[])
 {
     if(arr == NULL)
