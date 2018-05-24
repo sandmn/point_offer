@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+//求一个整型数组的连续子数组的最大和
 
 int MaxSum(int a[],int size)
 {
