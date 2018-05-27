@@ -58,6 +58,10 @@ int Find(char* str,hash* h)
 
 int find_first_single_char(char str[],int size)
 {
+    if(str == NULL)
+    {
+        return -1;
+    }
    hash h;
    Init(&h);
    Insert(str,&h);
@@ -66,16 +70,29 @@ int find_first_single_char(char str[],int size)
 
 int main()
 {
-    char* str = "asdfasdf";
-    int ret = find_first_single_char(str,strlen(str));
-    if(ret == -1)
-    {
-        printf("%d\n",ret);
-    }
-    else
-    {
-        printf("%c\n",(char)ret);
-    }
+    int ret = find_first_single_char(NULL,8);//测试非法输入
+    printf("expect -1,actually %d\n",ret);
+
+    char* str1 = "asdf";
+    ret = find_first_single_char(str1,strlen(str1));//测试所有字符都单独出现
+    printf("expect a,actually %c\n",(char)ret);
+
+    char* str2 = "asdfasdf";
+    ret = find_first_single_char(str2,strlen(str2));//测试没有单独出现的字符
+    printf("expect -1,actually %d\n",ret);
+
+    char* str3 = "asdfasdfw";
+    ret = find_first_single_char(str3,strlen(str3));//测试有单独出现的字符
+    printf("expect w,actually %c\n",(char)ret);
+    
+//    if(ret == -1)
+//    {
+//        printf("%d\n",ret);
+//    }
+//    else
+//    {
+//        printf("%c\n",(char)ret);
+//    }
     return 0;
 }
 
