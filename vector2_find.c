@@ -50,3 +50,47 @@ int main()
     printf("%d\n",ret);
     return 0;
 }
+
+
+//在数组中查找一个值是否存在
+//数组从左到右，从上到下递增
+//int Find(int arr[][3], int size, int key)
+//{
+//    if (arr == NULL || size <= 0)
+//    {
+//        return 0;
+//    }
+//    int row = 0;
+//    int col = size - 1;
+//    while (row < size && col >= 0)
+//    {
+//        if (arr[row][col] == key)
+//        {
+//            return 1;
+//        }
+//        else if (arr[row][col] < key)
+//        {
+//            row++;
+//        }
+//        else
+//        {
+//            col--;
+//        }
+//    }
+//    return 0;
+//
+//}
+//
+//int main()
+//{
+//    int arr[][3] =
+//    {
+//        { 1, 2, 3  },
+//        { 4, 5, 6  },
+//        { 7, 8, 9  }
+//    };
+//    int size = sizeof(arr) / sizeof(arr[0]);
+//    int ret = Find(arr, size, 12);
+//    printf("expect 1,actually %d\n", ret);
+//    return 0;
+//}
