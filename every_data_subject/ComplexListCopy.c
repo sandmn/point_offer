@@ -1,4 +1,5 @@
 
+//通过偏移量来进行拷贝
 //创建复杂链表节点函数
 RandomListNode* CreateNode(int value)
 {
