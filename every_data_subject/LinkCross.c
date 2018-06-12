@@ -1,3 +1,6 @@
+
+//求链表的交点
+
 int LinkLength(ListNode* pHead)
 {
     int size = 0;
