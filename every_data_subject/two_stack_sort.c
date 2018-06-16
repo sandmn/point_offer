@@ -1,3 +1,8 @@
+
+//按升序对栈进行排序（即最大元素位于栈定）
+//要求最多只能使用一个额外的栈来存放临时数据，不得将元素赋值到别的数据结构中
+//给行一个数组numbers第一个元素为栈定，返回排序后的栈，排序过程中只能访问栈的第一个元素
+
 class TwoStacks {
     public:
         vector<int> twoStacksSort(vector<int> numbers) {
