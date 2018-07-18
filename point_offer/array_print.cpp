@@ -39,6 +39,7 @@ void PrintArr(int arr[][4],int row,int col)
     int c = row - 1;
     int d = col - 1;
     //当横纵坐标相同时，也要进行讨论
+    //注意这里的两个条件要同时满足
     while(a <= c && b <= d)
     {
         Print(arr,a++,b++,c--,d--);
@@ -147,64 +148,3 @@ int main()
 }
 
 
-//void Print(int arr[][4],int a,int b,int c,int d)
-//{
-//    //先打印一圈的上边的n-1个
-//    int index = a;
-//    for(index = b;index < d;index++)
-//    {
-//        cout<<arr[a][index]<<" ";
-//    }
-//    //打印右侧的前n-1个
-//    for(index = a;index < c;index++)
-//    {
-//        cout<<arr[index][d]<<" ";
-//    }
-//    //打印下测的前n-1个
-//    for(index = d;index > b;index--)
-//    {
-//        cout<<arr[c][index]<<" ";
-//    }
-//    //打印左侧的前n-1个
-//    for(index = c;index > a;index--)
-//    {
-//        cout<<arr[index][b]<<" ";
-//    }
-//}
-//
-//void PrintArr(int arr[][4],int m,int n)
-//{
-//    //从外圈到内圈循环进行打印，每次坐标进行加加减减
-//    int a = 0;
-//    int b = 0;
-//    int c = m - 1;
-//    int d = n - 1;
-//    while(a < c && b < d)
-//    {
-//        Print(arr,a++,b++,c--,d--);
-//    }
-//    cout<<endl;
-//    return;
-//}
-//
-//
-//int main()
-//{
-//    int arr[2][4] = 
-//    {
-//        {1,2,3,4},
-//        {5,6,7,8},
-//    };
-//
-//    //计算数组的行
-//    int row = sizeof(arr)/sizeof(arr[0]);
-//    //计算数组的列
-//    int num = sizeof(arr)/sizeof(arr[0][0]);
-//    int col = num/row;
-//    cout<<row<<endl;
-//    cout<<col<<endl;
-//    PrintArr(arr,row,col);
-//
-//    Test();
-//    return 0;
-//}
