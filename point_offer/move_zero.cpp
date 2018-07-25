@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void MoveZero(int arr[],int n)
+void MoveZero_to_back(int arr[],int n)
 {
     //定义两个变量，都是从头开始进行遍历
     //fast从头往后开始遍历，找到第一个0元素
@@ -40,11 +40,43 @@ void MoveZero(int arr[],int n)
 }
 
 
+//将零元素移至数组前面
+//从后往前找，找到第一个0元素，以及0元素之前的第一非零元素进行交换
+void MoveZero_to_front(int arr[],int n)
+{
+    int fast = n - 1;
+    int slow = n - 1;
+    while(fast >= 0 || slow >= 0)
+    {
+        while(fast >= 0 && arr[fast] != 0)
+        {
+            fast--;
+        }
+        if(fast < 0)
+        {
+            return;
+        }
+        slow = fast - 1;
+        while(slow >= 0 && arr[slow] == 0)
+        {
+            slow--;
+        }
+        if(slow < 0)
+        {
+            return;
+        }
+        swap(arr[fast],arr[slow]);
+    }
+
+}
+
+
 int main()
 {
     int arr[] = {1,2,0,3,4,0,0,4};
     int n = sizeof(arr)/sizeof(arr[0]);
-    MoveZero(arr,n);
+    //MoveZero_to_back(arr,n);
+    MoveZero_to_front(arr,n);
     int index = 0;
     for(index = 0;index < n;index++)
     {
